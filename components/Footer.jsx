@@ -35,6 +35,7 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
+
               <li>
                 <Link href="/privacy" className="hover:text-green-600">
                   Privacy Policy
@@ -43,6 +44,22 @@ const Footer = () => {
               <li>
                 <Link href="/terms" className="hover:text-green-600">
                   Terms and Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/refund-and-cancellation-policy"
+                  className="hover:text-green-600"
+                >
+                  Refund and Cancellation Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/shipping-and-delivery-policy"
+                  className="hover:text-green-600"
+                >
+                  Shipping and Delivery Policy
                 </Link>
               </li>
             </ul>

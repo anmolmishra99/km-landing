@@ -134,17 +134,15 @@ export function AboutUsComponent() {
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <MapPin className="h-6 w-6 text-white mr-2" />
-                      <p>
-                        123 Farm Road, Green City, Agricultural State, 12345
-                      </p>
+                      <p>B Block Panki Kanpur, Uttar Pradesh</p>
                     </div>
                     <div className="flex items-center">
                       <Phone className="h-6 w-6 text-white mr-2" />
-                      <p>+1 (555) 123-4567</p>
+                      <p>(+91)-84230 88580</p>
                     </div>
                     <div className="flex items-center">
                       <Mail className="h-6 w-6 text-white mr-2" />
-                      <p>info@krishimandi.com</p>
+                      <p>krishimandi.in@gmail.com</p>
                     </div>
                   </div>
                   <div className="mt-6">
