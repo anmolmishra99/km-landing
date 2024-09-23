@@ -59,20 +59,21 @@ export function TermsAndConditionsComponent() {
                   </div>
                   <ul className="list-disc list-inside text-gray-600 space-y-2">
                     <li>
-                      "Krishi Mandi," "we," "us," and "our" refer to the Krishi
-                      Mandi platform and company.
+                      &quot;Krishi Mandi,&quot; &quot;we,&quot; &quot;us,&quot;
+                      and &quot;our&quot; refer to the Krishi Mandi platform and
+                      company.
                     </li>
                     <li>
-                      "User," "you," and "your" refer to individuals accessing
-                      or using our services.
+                      &quot;User,&quot; &quot;you,&quot; and &quot;your&quot;
+                      refer to individuals accessing or using our services.
                     </li>
                     <li>
-                      "Services" refers to all features, products, and services
-                      offered by Krishi Mandi.
+                      &quot;Services&quot; refers to all features, products, and
+                      services offered by Krishi Mandi.
                     </li>
                     <li>
-                      "Content" includes text, images, videos, and other
-                      materials on our platform.
+                      &quot;Content&quot; includes text, images, videos, and
+                      other materials on our platform.
                     </li>
                   </ul>
                 </CardContent>
