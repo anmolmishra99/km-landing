@@ -37,7 +37,7 @@ export function PrivacyPolicyComponent() {
                   safeguard your data when you use our website and services.
                 </p>
                 <p className="text-gray-600">
-                  By using Krishi Mandi's services, you agree to the terms
+                  By using Krishi Mandi&apos;s services, you agree to the terms
                   outlined in this Privacy Policy. We encourage you to read this
                   document carefully and contact us if you have any questions or
                   concerns.

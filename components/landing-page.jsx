@@ -90,7 +90,7 @@ export function LandingPageComponent() {
                   <Sprout className="h-12 w-12 text-green-600 mb-4" />
                   <p className="text-4xl font-bold text-gray-900 mb-2">18+</p>
                   <p className="text-lg text-gray-600 text-center">
-                    FPO's Connected
+                    FPO&apos;s Connected
                   </p>
                 </CardContent>
               </Card>
