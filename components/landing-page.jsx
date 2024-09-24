@@ -27,6 +27,7 @@ import tomato from "@/assets/prod_2.jpg";
 import potato from "@/assets/prod_3.jpg";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import BioFermenter from "./BioFermenter";
 export function LandingPageComponent() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -67,6 +68,8 @@ export function LandingPageComponent() {
             </div>
           </div>
         </section>
+
+        <BioFermenter />
 
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
