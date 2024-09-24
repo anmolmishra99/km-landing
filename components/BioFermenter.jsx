@@ -11,6 +11,8 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const BioFermenter = () => {
   return (
@@ -19,10 +21,17 @@ const BioFermenter = () => {
         <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
           Sustainable Waste Management
         </h2>
-        <p className="text-xl text-center mb-12 text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-center mb-2 text-gray-600 max-w-3xl mx-auto">
           Empowering farmers and fueling a greener future through innovative
           waste-to-energy solutions.
         </p>
+        <div className="flex justify-center py-5 pb-12">
+          <Link href="/organic-waste-management">
+            <Button className="bg-green-600 text-white hover:bg-green-500">
+              Learn More
+            </Button>
+          </Link>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">

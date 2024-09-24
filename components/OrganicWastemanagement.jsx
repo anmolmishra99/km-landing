@@ -27,15 +27,10 @@ export default function OrganicWasteManagement() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
               Organic Waste Management Solutions
             </h1>
-            <p className="text-xl mb-8 text-center max-w-3xl mx-auto">
+            <p className="text-xl mb-4 text-center max-w-3xl mx-auto">
               Empowering Indian farmers with innovative solutions for
               sustainable farming and improved productivity.
             </p>
-            <div className="flex justify-center">
-              <Button className="bg-white text-green-600 hover:bg-green-50">
-                Learn More
-              </Button>
-            </div>
           </div>
         </section>
 
