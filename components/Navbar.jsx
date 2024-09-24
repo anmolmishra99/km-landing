@@ -74,6 +74,14 @@ const Navbar = () => {
                 About Us
               </Link>
             </li>
+            <li>
+              <Link
+                href="/organic-waste-management"
+                className="block hover:text-green-600"
+              >
+                Organic Waste Management
+              </Link>
+            </li>
           </ul>
         </nav>
       )}
