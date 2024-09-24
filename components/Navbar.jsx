@@ -36,6 +36,12 @@ const Navbar = () => {
           <Link href="/about-us" className="hover:text-green-600">
             About Us
           </Link>
+          <Link
+            href="/organic-waste-management"
+            className="hover:text-green-600"
+          >
+            Organic Waste Management
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
