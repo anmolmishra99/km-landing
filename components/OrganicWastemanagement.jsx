@@ -106,8 +106,10 @@ export default function OrganicWasteManagement() {
               Discover the multifaceted benefits of our organic waste management
               solutions for Indian agriculture.
             </p>
+
+            {/* Tabs Container */}
             <Tabs defaultValue="soil" className="max-w-4xl mx-auto">
-              <TabsList className="grid w-full h-16 grid-cols-2 md:grid-cols-5 bg-green-100 p-1 rounded-lg">
+              <TabsList className="grid grid-cols-2 gap-2 md:grid-cols-5 w-full h-auto p-1 bg-green-100 rounded-lg">
                 {[
                   { value: "soil", label: "Soil Health", icon: Leaf },
                   {
@@ -133,6 +135,8 @@ export default function OrganicWasteManagement() {
                   </TabsTrigger>
                 ))}
               </TabsList>
+
+              {/* Tab Contents */}
               {[
                 {
                   value: "soil",
