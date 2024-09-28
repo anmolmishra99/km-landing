@@ -13,6 +13,12 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import ait from "@/assets/aith.png";
+import aktu from "@/assets/aktu.png";
+import citi from "@/assets/citi.png";
+import siic from "@/assets/siic.png";
+import sui from "@/assets/sui.png";
+import waste from "@/assets/waste.jpg";
 
 const BioFermenter = () => {
   return (
@@ -168,24 +174,34 @@ const BioFermenter = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-gray-800 text-center">
-                Incubated at
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex items-center justify-center">
-              <div className="bg-white p-8 rounded-lg w-full max-w-xs">
-                <img
-                  src="https://iitk.ac.in/new/images/large-images/staff/siicincubator_max.jpg"
-                  alt="Incubator Logo"
-                  width={200}
-                  height={100}
-                  className="mx-auto"
-                />
-              </div>
-            </CardContent>
-          </Card>
+          <div className="bg-white  rounded-xl w-full h-full">
+            <Image
+              src={waste}
+              alt="Incubator Logo"
+              className="mx-auto w-full h-full rounded-xl object-cover"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="py-16 px-4">
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
+          Proud Partners
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          {[ait, aktu, citi, siic, sui].map((image, index) => (
+            <div
+              key={index}
+              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center"
+            >
+              <Image
+                src={image}
+                alt={`Partner ${index + 1} Logo`}
+                width={150}
+                height={75}
+                className="max-w-full h-auto"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

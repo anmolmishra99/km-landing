@@ -1,5 +1,5 @@
 "use client";
-
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -28,7 +28,29 @@ import potato from "@/assets/prod_3.jpg";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BioFermenter from "./BioFermenter";
+import CountUp from "react-countup";
+
 export function LandingPageComponent() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const target = document.querySelector("#impact-section");
+    if (target) observer.observe(target);
+
+    return () => {
+      if (target) observer.unobserve(target);
+    };
+  }, []);
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
@@ -71,7 +93,7 @@ export function LandingPageComponent() {
 
         <BioFermenter />
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white" id="impact-section">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
               Our Impact
@@ -81,7 +103,10 @@ export function LandingPageComponent() {
                 <CardContent className="flex flex-col items-center p-6">
                   <Users className="h-12 w-12 text-green-600 mb-4" />
                   <p className="text-4xl font-bold text-gray-900 mb-2">
-                    1,227+
+                    {isVisible && (
+                      <CountUp end={1227} duration={2.5} separator="," />
+                    )}
+                    +
                   </p>
                   <p className="text-lg text-gray-600 text-center">
                     Farmers Connected
@@ -91,7 +116,9 @@ export function LandingPageComponent() {
               <Card>
                 <CardContent className="flex flex-col items-center p-6">
                   <Sprout className="h-12 w-12 text-green-600 mb-4" />
-                  <p className="text-4xl font-bold text-gray-900 mb-2">18+</p>
+                  <p className="text-4xl font-bold text-gray-900 mb-2">
+                    {isVisible && <CountUp end={18} duration={2} />}+
+                  </p>
                   <p className="text-lg text-gray-600 text-center">
                     FPO&apos;s Connected
                   </p>
@@ -100,7 +127,9 @@ export function LandingPageComponent() {
               <Card>
                 <CardContent className="flex flex-col items-center p-6">
                   <Truck className="h-12 w-12 text-green-600 mb-4" />
-                  <p className="text-4xl font-bold text-gray-900 mb-2">50+</p>
+                  <p className="text-4xl font-bold text-gray-900 mb-2">
+                    {isVisible && <CountUp end={50} duration={2} />}+
+                  </p>
                   <p className="text-lg text-gray-600 text-center">
                     Clients Served
                   </p>
@@ -184,14 +213,16 @@ export function LandingPageComponent() {
                   />
                   <CardContent className="p-4">
                     <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                      Organic Product {index + 1}
+                      Organic{" "}
+                      {index === 0
+                        ? "Guava"
+                        : index === 1
+                        ? "Potato"
+                        : "Tomato"}
                     </h3>
                     <p className="text-gray-600 mb-4">
                       Fresh from our farms to your table.
                     </p>
-                    <Button className="w-full bg-green-600 text-white hover:bg-green-700">
-                      View in App
-                    </Button>
                   </CardContent>
                 </Card>
               ))}
