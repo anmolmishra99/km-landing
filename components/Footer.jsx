@@ -64,7 +64,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3 className="text-xl font-semibold mb-4">Download Our App</h3>
             <Link
               href="https://play.google.com/store/apps/details?id=com.krishimandi.app"
@@ -81,7 +81,7 @@ const Footer = () => {
               </svg>
               Get it on Google Play
             </Link>
-          </div>
+          </div> */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
