@@ -21,7 +21,7 @@ const ProudPartner = () => {
           >
             <Image
               src={image}
-              alt={`Partner ${index + 1} Logo`}
+              alt={` ${index + 1}`}
               width={150}
               height={75}
               className="max-w-full h-auto"
