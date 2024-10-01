@@ -15,14 +15,14 @@ const Navbar = () => {
 
   return (
     <header className="bg-white text-gray-900 py-4 sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="container mx-auto px-0 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src={logo}
             alt="Krishi Mandi"
-            width={200} // Adjusted for better visibility on mobile
-            height={200}
+            width={100} // Adjusted for better visibility on mobile
+            height={100}
           />
         </Link>
 
