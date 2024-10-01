@@ -63,7 +63,8 @@ export default function DeleteAccount() {
               Delete Account
             </CardTitle>
             <CardDescription className="text-center">
-              We're sorry to see you go. Please confirm your account deletion.
+              We&apos;re sorry to see you go. Please confirm your account
+              deletion.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -145,8 +146,8 @@ export default function DeleteAccount() {
             <DialogHeader>
               <DialogTitle>Account Deleted</DialogTitle>
               <DialogDescription>
-                Your account has been successfully deleted. We're sorry to see
-                you go.
+                Your account has been successfully deleted. We&apos;re sorry to
+                see you go.
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>
