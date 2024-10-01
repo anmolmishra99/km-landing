@@ -53,7 +53,8 @@ export default function DeleteAccount() {
               Delete Account
             </CardTitle>
             <CardDescription className="text-center">
-              We're sorry to see you go. Please confirm your account deletion.
+              We&apos;re sorry to see you go. Please confirm your account
+              deletion
             </CardDescription>
           </CardHeader>
           <CardContent>
