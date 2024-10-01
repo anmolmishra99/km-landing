@@ -2,15 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Leaf,
-  Shield,
-  Eye,
-  Lock,
-  Trash2,
-  MessageCircle,
-  Trash2,
-} from "lucide-react";
+import { Leaf, Shield, Eye, Lock, MessageCircle, Trash2 } from "lucide-react";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
