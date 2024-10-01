@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Leaf } from "lucide-react";
 import Image from "next/image";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -11,12 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col items-start">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Image
-                src="https://krishimandi.in/wp-content/uploads/2024/01/K__7_-removebg-preview-1-Copy.png"
-                alt="Krishi Mandi"
-                width={200}
-                height={200}
-              />
+              <Image src={logo} alt="Krishi Mandi" width={200} height={200} />
             </Link>
             <p className="text-sm">
               Connecting farmers and consumers for a sustainable future.

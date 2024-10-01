@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button"; // Adjust the path as necessary
 import { FaBars, FaTimes } from "react-icons/fa"; // Icons for the menu toggle
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="https://krishimandi.in/wp-content/uploads/2024/01/K__7_-removebg-preview-1-Copy.png"
+            src={logo}
             alt="Krishi Mandi"
             width={200} // Adjusted for better visibility on mobile
             height={200}
