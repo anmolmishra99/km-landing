@@ -2,7 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Leaf, Shield, Eye, Lock, Trash2, MessageCircle } from "lucide-react";
+import {
+  Leaf,
+  Shield,
+  Eye,
+  Lock,
+  Trash2,
+  MessageCircle,
+  Trash2,
+} from "lucide-react";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -131,6 +139,52 @@ export function PrivacyPolicyComponent() {
                 </CardContent>
               </Card>
             </div>
+
+            <Card>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <Trash2 className="h-6 w-6 text-green-600 mr-2" />
+                  <h2 className="text-xl font-bold text-green-800">
+                    Data Deletion and Account Removal
+                  </h2>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  We respect your right to control your data. As such, we
+                  provide you with the option to delete your data and account
+                  completely from our website:
+                </p>
+                <ul className="list-disc list-inside text-gray-600 space-y-2">
+                  <li>
+                    You can request complete deletion of your account and
+                    associated data
+                  </li>
+                  <li>
+                    The deletion process is irreversible and removes all your
+                    personal information
+                  </li>
+                  <li>
+                    To delete your account, you can use the account deletion
+                    feature in your account settings
+                  </li>
+                  <li>
+                    We verify your identity through a secure OTP process before
+                    account deletion
+                  </li>
+                  <li>
+                    Upon confirmation, your data is permanently removed from our
+                    active systems
+                  </li>
+                  <li>
+                    We may retain certain data for legal or legitimate business
+                    purposes, as required by law
+                  </li>
+                </ul>
+                <p className="text-gray-600 mt-4">
+                  If you have any questions about data deletion or need
+                  assistance, please contact our support team.
+                </p>
+              </CardContent>
+            </Card>
 
             <Card className="mt-8">
               <CardContent className="p-6">

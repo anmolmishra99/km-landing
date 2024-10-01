@@ -11,8 +11,15 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { AlertTriangle, ArrowLeft, X } from "lucide-react";
+import { AlertTriangle, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -24,23 +31,26 @@ import {
 import Navbar from "./Navbar";
 
 export default function DeleteAccount() {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [userType, setUserType] = useState("");
   const [otp, setOtp] = useState("");
-  const [confirmEmail, setConfirmEmail] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const handleDeleteRequest = (event) => {
-    event.preventDefault();
-    setIsDialogOpen(true);
+  const [isOtpSent, setIsOtpSent] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleGetOtp = () => {
+    if (phone && userType) {
+      // In a real application, you would send an OTP to the phone number here
+      console.log("Sending OTP to", phone);
+      setIsOtpSent(true);
+    }
   };
 
-  const handleConfirmDelete = () => {
-    // Handle final account deletion logic here
-    console.log("Account deletion confirmed");
-    console.log("Reason:", reason);
-    console.log("Confirmed Email:", confirmEmail);
-    console.log("Confirmed Password:", confirmPassword);
-    setIsDialogOpen(false);
+  const handleDelete = () => {
+    if (otp) {
+      // In a real application, you would verify the OTP and delete the account here
+      console.log("Deleting account for", phone, "with OTP", otp);
+      setIsDialogOpen(true);
+    }
   };
 
   return (
@@ -53,44 +63,67 @@ export default function DeleteAccount() {
               Delete Account
             </CardTitle>
             <CardDescription className="text-center">
-              We&apos;re sorry to see you go. Please confirm your account
-              deletion
+              We're sorry to see you go. Please confirm your account deletion.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <form onSubmit={handleDeleteRequest}>
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="phone-number">Phone Number</Label>
-                  <Input
-                    id="phone-number"
-                    type="number"
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    placeholder="Enter your phone number"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="password">Password</Label>
-                  <Input
-                    id="password"
-                    type="password"
-                    placeholder="Enter your password"
-                    required
-                  />
-                </div>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone Number</Label>
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="Enter your phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                disabled={isOtpSent}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="userType">User Type</Label>
+              <Select onValueChange={setUserType} disabled={isOtpSent} required>
+                <SelectTrigger id="userType">
+                  <SelectValue placeholder="Select user type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="consumer">Consumer</SelectItem>
+                  <SelectItem value="farmer">Farmer</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            {!isOtpSent && (
+              <Button
+                onClick={handleGetOtp}
+                className="w-full"
+                disabled={!phone || !userType}
+              >
+                Get OTP
+              </Button>
+            )}
+            {isOtpSent && (
+              <div className="space-y-2">
+                <Label htmlFor="otp">OTP</Label>
+                <Input
+                  id="otp"
+                  type="text"
+                  placeholder="Enter the OTP"
+                  value={otp}
+                  onChange={(e) => setOtp(e.target.value)}
+                  required
+                />
               </div>
-            </form>
+            )}
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <Button
-              type="submit"
-              onClick={handleDeleteRequest}
-              className="w-full bg-red-600 hover:bg-red-700 text-white"
-            >
-              Delete My Account
-            </Button>
+            {isOtpSent && (
+              <Button
+                onClick={handleDelete}
+                className="w-full bg-red-600 hover:bg-red-700 text-white"
+                disabled={!otp}
+              >
+                Delete My Account
+              </Button>
+            )}
             <div className="text-sm text-gray-500 text-center space-y-2">
               <div className="flex items-center justify-center text-amber-600">
                 <AlertTriangle className="w-4 h-4 mr-1" />
@@ -107,71 +140,17 @@ export default function DeleteAccount() {
           </CardFooter>
         </Card>
 
-        {/* Dialog start from here */}
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogContent className="sm:max-w-[425px] bg-white text-gray-900">
             <DialogHeader>
-              <DialogTitle>Confirm Account Deletion</DialogTitle>
+              <DialogTitle>Account Deleted</DialogTitle>
               <DialogDescription>
-                Please provide the following information to confirm your account
-                deletion.
+                Your account has been successfully deleted. We're sorry to see
+                you go.
               </DialogDescription>
             </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="otp" className="text-right">
-                  OTP
-                </Label>
-                <Input
-                  id="otp"
-                  className="col-span-3"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  placeholder="Enter OTP"
-                />
-              </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="confirm-email" className="text-right">
-                  Email
-                </Label>
-                <Input
-                  id="confirm-email"
-                  type="email"
-                  className="col-span-3"
-                  value={confirmEmail}
-                  onChange={(e) => setConfirmEmail(e.target.value)}
-                  placeholder="Confirm your email"
-                />
-              </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="confirm-password" className="text-right">
-                  Password
-                </Label>
-                <Input
-                  id="confirm-password"
-                  type="password"
-                  className="col-span-3"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Confirm your password"
-                />
-              </div>
-            </div>
             <DialogFooter>
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => setIsDialogOpen(false)}
-              >
-                Cancel
-              </Button>
-              <Button
-                type="button"
-                variant="destructive"
-                onClick={handleConfirmDelete}
-              >
-                Confirm Deletion
-              </Button>
+              <Button onClick={() => setIsDialogOpen(false)}>Close</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
