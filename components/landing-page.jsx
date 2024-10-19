@@ -70,13 +70,13 @@ export function LandingPageComponent() {
                 <Button className="bg-green-600 text-white hover:bg-green-700">
                   Get Started
                 </Button>
-                <Button
+                {/* <Button
                   variant="outline"
                   className="text-green-600 border-green-600 hover:bg-green-50 flex items-center"
                 >
                   <PlayCircle className="mr-2 h-5 w-5" />
                   Download App
-                </Button>
+                </Button> */}
               </div>
             </div>
             <div className="md:w-1/2">

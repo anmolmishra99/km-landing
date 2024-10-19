@@ -6,6 +6,7 @@ import siic from "@/assets/siic.png";
 import sui from "@/assets/sui.png";
 import dst from "@/assets/dst.png";
 import startinup from "@/assets/startinup.png";
+import iit from "@/assets/iit.webp";
 import Image from "next/image";
 const ProudPartner = () => {
   return (
@@ -14,7 +15,7 @@ const ProudPartner = () => {
         Proud Partners
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-7 gap-8">
-        {[ait, aktu, citi, siic, sui, dst, startinup].map((image, index) => (
+        {[ait, aktu, citi, iit, sui, dst, startinup].map((image, index) => (
           <div
             key={index}
             className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center"

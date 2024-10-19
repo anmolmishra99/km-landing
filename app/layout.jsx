@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Krishimandi | For Farmers, By Farmers",
+  title: "Krishimandi | For The Farmers, By The Farmers",
   description: "Connecting Farmers and Consumers for a Sustainable Future",
 };
 
